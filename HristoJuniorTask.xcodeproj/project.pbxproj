@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		385F51F51F6D5E58008B50CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F51F41F6D5E58008B50CD /* AppDelegate.swift */; };
-		385F51F71F6D5E58008B50CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F51F61F6D5E58008B50CD /* ViewController.swift */; };
+		385F51F71F6D5E58008B50CD /* CustomPulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F51F61F6D5E58008B50CD /* CustomPulleyViewController.swift */; };
 		385F51FA1F6D5E58008B50CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385F51F81F6D5E58008B50CD /* Main.storyboard */; };
 		385F51FD1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 385F51FB1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodeld */; };
 		385F51FF1F6D5E58008B50CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385F51FE1F6D5E58008B50CD /* Assets.xcassets */; };
 		385F52021F6D5E58008B50CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385F52001F6D5E58008B50CD /* LaunchScreen.storyboard */; };
+		8922FA1F578AA8A4F0D095ED /* Pods_HristoJuniorTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D779EAEB13233CD2A00A2781 /* Pods_HristoJuniorTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		385F51F11F6D5E58008B50CD /* HristoJuniorTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HristoJuniorTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385F51F41F6D5E58008B50CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		385F51F61F6D5E58008B50CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		385F51F61F6D5E58008B50CD /* CustomPulleyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPulleyViewController.swift; sourceTree = "<group>"; };
 		385F51F91F6D5E58008B50CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		385F51FC1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HristoJuniorTask.xcdatamodel; sourceTree = "<group>"; };
 		385F51FE1F6D5E58008B50CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		385F52011F6D5E58008B50CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		385F52031F6D5E58008B50CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EE8C3A05F04A6405179CFF9 /* Pods-HristoJuniorTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HristoJuniorTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask.debug.xcconfig"; sourceTree = "<group>"; };
+		D779EAEB13233CD2A00A2781 /* Pods_HristoJuniorTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HristoJuniorTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD02D4FA6F86A4AAEE42578 /* Pods-HristoJuniorTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HristoJuniorTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8922FA1F578AA8A4F0D095ED /* Pods_HristoJuniorTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				385F51F31F6D5E58008B50CD /* HristoJuniorTask */,
 				385F51F21F6D5E58008B50CD /* Products */,
+				5A90466D2987C3EA5218CCC0 /* Pods */,
+				416AB8ED96246CB1ED6524A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +64,55 @@
 			isa = PBXGroup;
 			children = (
 				385F51F41F6D5E58008B50CD /* AppDelegate.swift */,
-				385F51F61F6D5E58008B50CD /* ViewController.swift */,
-				385F51F81F6D5E58008B50CD /* Main.storyboard */,
-				385F51FE1F6D5E58008B50CD /* Assets.xcassets */,
-				385F52001F6D5E58008B50CD /* LaunchScreen.storyboard */,
 				385F52031F6D5E58008B50CD /* Info.plist */,
-				385F51FB1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodeld */,
+				385F520A1F6D5F5B008B50CD /* Views */,
+				385F52091F6D5F50008B50CD /* Models */,
+				385F520B1F6D5F69008B50CD /* Controllers */,
 			);
 			path = HristoJuniorTask;
+			sourceTree = "<group>";
+		};
+		385F52091F6D5F50008B50CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				385F51FB1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		385F520A1F6D5F5B008B50CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				385F51FE1F6D5E58008B50CD /* Assets.xcassets */,
+				385F51F81F6D5E58008B50CD /* Main.storyboard */,
+				385F52001F6D5E58008B50CD /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		385F520B1F6D5F69008B50CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				385F51F61F6D5E58008B50CD /* CustomPulleyViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		416AB8ED96246CB1ED6524A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D779EAEB13233CD2A00A2781 /* Pods_HristoJuniorTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A90466D2987C3EA5218CCC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EE8C3A05F04A6405179CFF9 /* Pods-HristoJuniorTask.debug.xcconfig */,
+				FBD02D4FA6F86A4AAEE42578 /* Pods-HristoJuniorTask.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 385F52061F6D5E58008B50CD /* Build configuration list for PBXNativeTarget "HristoJuniorTask" */;
 			buildPhases = (
+				F4C2A8115ADEB3A7DE2C961A /* [CP] Check Pods Manifest.lock */,
 				385F51ED1F6D5E58008B50CD /* Sources */,
 				385F51EE1F6D5E58008B50CD /* Frameworks */,
 				385F51EF1F6D5E58008B50CD /* Resources */,
+				598D0F46FFCFDCF64C452D9A /* [CP] Embed Pods Frameworks */,
+				466F7500C6EC5BB04E3693BF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,12 +185,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		466F7500C6EC5BB04E3693BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		598D0F46FFCFDCF64C452D9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4C2A8115ADEB3A7DE2C961A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HristoJuniorTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		385F51ED1F6D5E58008B50CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				385F51F71F6D5E58008B50CD /* ViewController.swift in Sources */,
+				385F51F71F6D5E58008B50CD /* CustomPulleyViewController.swift in Sources */,
 				385F51F51F6D5E58008B50CD /* AppDelegate.swift in Sources */,
 				385F51FD1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodeld in Sources */,
 			);
@@ -208,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -253,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -264,6 +372,7 @@
 		};
 		385F52071F6D5E58008B50CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EE8C3A05F04A6405179CFF9 /* Pods-HristoJuniorTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HristoJuniorTask/Info.plist;
@@ -276,6 +385,7 @@
 		};
 		385F52081F6D5E58008B50CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBD02D4FA6F86A4AAEE42578 /* Pods-HristoJuniorTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HristoJuniorTask/Info.plist;
@@ -305,6 +415,7 @@
 				385F52081F6D5E58008B50CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

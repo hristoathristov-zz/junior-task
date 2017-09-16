@@ -1,0 +1,6 @@
+framework module Pods_HristoJuniorTask {
+  umbrella header "Pods-HristoJuniorTask-umbrella.h"
+
+  export *
+  module * { export * }
+}

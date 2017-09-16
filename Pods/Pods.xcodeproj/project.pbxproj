@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CD7E45E0D3FC538EBA0F5189E41C7D0 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1464729D4E01E29A24D31DBB9644224 /* PulleyViewController.swift */; };
+		4040EC9ACE60C845C7E0E67D950DB18E /* Pods-HristoJuniorTask-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F235997E01E48BE5B851CB428366478A /* Pods-HristoJuniorTask-dummy.m */; };
+		59275DB37E18FEE58FEF94B9C16E4587 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		775C5CF26FB2C03C6DFC9EAC0BA2024B /* UIView+constrainToParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631511A77EAE985CD6BFF0929D40605 /* UIView+constrainToParent.swift */; };
+		8C42D346BC197CF2D9B4DB07A5C34B1D /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D1D47C3F0867C7071B81F771411E5 /* PulleyPassthroughScrollView.swift */; };
+		90F062EBAD984FF1F14AAF8936CD58F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		A76FA35C26149B344F6FB8CAA5B33650 /* PulleyViewController+Nested.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3FF8761CE5E7C9C303BA2F44C446B /* PulleyViewController+Nested.swift */; };
+		AF0F0AB5986D9F6D190D222DF7169D35 /* Pods-HristoJuniorTask-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0D4D774A75F7EA13574D701987563A7 /* Pods-HristoJuniorTask-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAD8354455BE16CCFB51DA76E1F296B9 /* Pulley-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3698D546179FA389F37C6DE2B683AB4 /* Pulley-dummy.m */; };
+		F43EEA21506ABC59B89E6E3EC235B21C /* Pulley-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5332027FF75E3325C41EE92F82CE1C41 /* Pulley-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F79B1692BCC3F821467864331BB20BE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		899F0B3CED65EA60A9FDCE43986B015E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7C232B721C9969BE9DC891D7F94DBFA;
+			remoteInfo = Pulley;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1BDD46A9AA94871A6034D29C8AC90A9E /* Pods-HristoJuniorTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HristoJuniorTask.release.xcconfig"; sourceTree = "<group>"; };
+		1C46D63B6926D8185CDD91AC9537C53E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		3332BF255428C2840CCD408FE6F4BD03 /* Pods-HristoJuniorTask.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HristoJuniorTask.modulemap"; sourceTree = "<group>"; };
+		3EB020A83B29029ACB53BBA550EB0924 /* Pods-HristoJuniorTask-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HristoJuniorTask-resources.sh"; sourceTree = "<group>"; };
+		4F53073F1EBAE3EB9BB31A0521A592F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FC8A363049EBFECC2151B8E3EFAF296 /* Pods-HristoJuniorTask-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HristoJuniorTask-acknowledgements.plist"; sourceTree = "<group>"; };
+		5332027FF75E3325C41EE92F82CE1C41 /* Pulley-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pulley-umbrella.h"; sourceTree = "<group>"; };
+		5DFCD2F7C5E0A748A1F919872866F5F4 /* Pods-HristoJuniorTask-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HristoJuniorTask-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6A23A70E367B9F5054897A1E19DA7D40 /* Pods_HristoJuniorTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HristoJuniorTask.framework; path = "Pods-HristoJuniorTask.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		730CF1C44B377AC903E10277F1C335EC /* Pods-HristoJuniorTask-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HristoJuniorTask-frameworks.sh"; sourceTree = "<group>"; };
+		75C21FD23DEFD210CE9006873DC3CBBF /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		8631511A77EAE985CD6BFF0929D40605 /* UIView+constrainToParent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+constrainToParent.swift"; path = "PulleyLib/UIView+constrainToParent.swift"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96A3FF8761CE5E7C9C303BA2F44C446B /* PulleyViewController+Nested.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PulleyViewController+Nested.swift"; path = "PulleyLib/PulleyViewController+Nested.swift"; sourceTree = "<group>"; };
+		9C493700A3F7F342DD380177A7C3AF0E /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		A0D4D774A75F7EA13574D701987563A7 /* Pods-HristoJuniorTask-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HristoJuniorTask-umbrella.h"; sourceTree = "<group>"; };
+		B1464729D4E01E29A24D31DBB9644224 /* PulleyViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulleyViewController.swift; path = PulleyLib/PulleyViewController.swift; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B73D1D47C3F0867C7071B81F771411E5 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulleyPassthroughScrollView.swift; path = PulleyLib/PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
+		B78D2B3D6A248E51160FECA46F4C7A90 /* Pulley.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pulley.xcconfig; sourceTree = "<group>"; };
+		C35D6BBDB04BAA99A6A990B1BA22DCE6 /* Pulley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pulley.framework; path = Pulley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C412DC318C07A4FAD744EA83E33A7E77 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		D4E1B1C3058F73F2B45E52E00CB8EE77 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F1509C13CD0442222DCCB9664A19195D /* Pulley-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pulley-prefix.pch"; sourceTree = "<group>"; };
+		F235997E01E48BE5B851CB428366478A /* Pods-HristoJuniorTask-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HristoJuniorTask-dummy.m"; sourceTree = "<group>"; };
+		F3698D546179FA389F37C6DE2B683AB4 /* Pulley-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pulley-dummy.m"; sourceTree = "<group>"; };
+		FC6328F38A627DC61B62078CA2A1F470 /* Pods-HristoJuniorTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HristoJuniorTask.debug.xcconfig"; sourceTree = "<group>"; };
+		FDEA48FF6C6F8DA0637BAFE2F79C113E /* Pulley.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Pulley.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F8A5F0B93A6019A743F8B1D34F2218A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F79B1692BCC3F821467864331BB20BE0 /* Foundation.framework in Frameworks */,
+				59275DB37E18FEE58FEF94B9C16E4587 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92CB7B31C97E22A2D59766AD00675879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90F062EBAD984FF1F14AAF8936CD58F1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E79FB88E33E03A71EF0552E07F98D5F /* Pulley */ = {
+			isa = PBXGroup;
+			children = (
+				B73D1D47C3F0867C7071B81F771411E5 /* PulleyPassthroughScrollView.swift */,
+				B1464729D4E01E29A24D31DBB9644224 /* PulleyViewController.swift */,
+				96A3FF8761CE5E7C9C303BA2F44C446B /* PulleyViewController+Nested.swift */,
+				8631511A77EAE985CD6BFF0929D40605 /* UIView+constrainToParent.swift */,
+				63C7252A3D4BC9339E6C01AF7A06EAE1 /* Support Files */,
+			);
+			name = Pulley;
+			path = Pulley;
+			sourceTree = "<group>";
+		};
+		1A54CD06C1B82736CC9E45DE774F2AC1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				21055393875B31EB2D0857BCBD36F761 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		21055393875B31EB2D0857BCBD36F761 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75C21FD23DEFD210CE9006873DC3CBBF /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24F98F020051B6D7840B354E61A29BFF /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				1A54CD06C1B82736CC9E45DE774F2AC1 /* Base */,
+				6AB2AFCF769EF62F44FFC157DE4472BC /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		2F014C91B9E988D70D9CD903DA82639C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C46D63B6926D8185CDD91AC9537C53E /* GoogleMaps.framework */,
+				C412DC318C07A4FAD744EA83E33A7E77 /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43834427FE7085CBCA3EEC8CAC4A3EA3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D16AFF0C67E6C4E4C39BDAA3F77FAA0F /* Pods-HristoJuniorTask */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		63C7252A3D4BC9339E6C01AF7A06EAE1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F53073F1EBAE3EB9BB31A0521A592F5 /* Info.plist */,
+				FDEA48FF6C6F8DA0637BAFE2F79C113E /* Pulley.modulemap */,
+				B78D2B3D6A248E51160FECA46F4C7A90 /* Pulley.xcconfig */,
+				F3698D546179FA389F37C6DE2B683AB4 /* Pulley-dummy.m */,
+				F1509C13CD0442222DCCB9664A19195D /* Pulley-prefix.pch */,
+				5332027FF75E3325C41EE92F82CE1C41 /* Pulley-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pulley";
+			sourceTree = "<group>";
+		};
+		6AB2AFCF769EF62F44FFC157DE4472BC /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				2F014C91B9E988D70D9CD903DA82639C /* Frameworks */,
+				8C2643E13BEDFE72B26136FB355E20B5 /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				BF80355733F3D52F38255CF1D10C64EC /* Pods */,
+				ADC97B292D4245C034B31655F3E833DA /* Products */,
+				43834427FE7085CBCA3EEC8CAC4A3EA3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8C2643E13BEDFE72B26136FB355E20B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C493700A3F7F342DD380177A7C3AF0E /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		ADC97B292D4245C034B31655F3E833DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A23A70E367B9F5054897A1E19DA7D40 /* Pods_HristoJuniorTask.framework */,
+				C35D6BBDB04BAA99A6A990B1BA22DCE6 /* Pulley.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF80355733F3D52F38255CF1D10C64EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24F98F020051B6D7840B354E61A29BFF /* GoogleMaps */,
+				0E79FB88E33E03A71EF0552E07F98D5F /* Pulley */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D16AFF0C67E6C4E4C39BDAA3F77FAA0F /* Pods-HristoJuniorTask */ = {
+			isa = PBXGroup;
+			children = (
+				D4E1B1C3058F73F2B45E52E00CB8EE77 /* Info.plist */,
+				3332BF255428C2840CCD408FE6F4BD03 /* Pods-HristoJuniorTask.modulemap */,
+				5DFCD2F7C5E0A748A1F919872866F5F4 /* Pods-HristoJuniorTask-acknowledgements.markdown */,
+				4FC8A363049EBFECC2151B8E3EFAF296 /* Pods-HristoJuniorTask-acknowledgements.plist */,
+				F235997E01E48BE5B851CB428366478A /* Pods-HristoJuniorTask-dummy.m */,
+				730CF1C44B377AC903E10277F1C335EC /* Pods-HristoJuniorTask-frameworks.sh */,
+				3EB020A83B29029ACB53BBA550EB0924 /* Pods-HristoJuniorTask-resources.sh */,
+				A0D4D774A75F7EA13574D701987563A7 /* Pods-HristoJuniorTask-umbrella.h */,
+				FC6328F38A627DC61B62078CA2A1F470 /* Pods-HristoJuniorTask.debug.xcconfig */,
+				1BDD46A9AA94871A6034D29C8AC90A9E /* Pods-HristoJuniorTask.release.xcconfig */,
+			);
+			name = "Pods-HristoJuniorTask";
+			path = "Target Support Files/Pods-HristoJuniorTask";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		19C808D3CA76BA2A579EBB79309128DD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF0F0AB5986D9F6D190D222DF7169D35 /* Pods-HristoJuniorTask-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6838F603AA4F118E4012C0F7B31DBBE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43EEA21506ABC59B89E6E3EC235B21C /* Pulley-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		61380B56CDFB50B30837CBBC90995823 /* Pods-HristoJuniorTask */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6632F94435DFCDB31150D301B10857C /* Build configuration list for PBXNativeTarget "Pods-HristoJuniorTask" */;
+			buildPhases = (
+				54A1893A8A8B4B7D14FB56535D50622B /* Sources */,
+				92CB7B31C97E22A2D59766AD00675879 /* Frameworks */,
+				19C808D3CA76BA2A579EBB79309128DD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEF51363809B3A97C7412D171E1C0FFB /* PBXTargetDependency */,
+			);
+			name = "Pods-HristoJuniorTask";
+			productName = "Pods-HristoJuniorTask";
+			productReference = 6A23A70E367B9F5054897A1E19DA7D40 /* Pods_HristoJuniorTask.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F7C232B721C9969BE9DC891D7F94DBFA /* Pulley */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05204941C9C5591A0950D80E1E4E63CD /* Build configuration list for PBXNativeTarget "Pulley" */;
+			buildPhases = (
+				08793ADE165E195B44B86D91109D7248 /* Sources */,
+				3F8A5F0B93A6019A743F8B1D34F2218A /* Frameworks */,
+				B6838F603AA4F118E4012C0F7B31DBBE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pulley;
+			productName = Pulley;
+			productReference = C35D6BBDB04BAA99A6A990B1BA22DCE6 /* Pulley.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = ADC97B292D4245C034B31655F3E833DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61380B56CDFB50B30837CBBC90995823 /* Pods-HristoJuniorTask */,
+				F7C232B721C9969BE9DC891D7F94DBFA /* Pulley */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08793ADE165E195B44B86D91109D7248 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAD8354455BE16CCFB51DA76E1F296B9 /* Pulley-dummy.m in Sources */,
+				8C42D346BC197CF2D9B4DB07A5C34B1D /* PulleyPassthroughScrollView.swift in Sources */,
+				A76FA35C26149B344F6FB8CAA5B33650 /* PulleyViewController+Nested.swift in Sources */,
+				0CD7E45E0D3FC538EBA0F5189E41C7D0 /* PulleyViewController.swift in Sources */,
+				775C5CF26FB2C03C6DFC9EAC0BA2024B /* UIView+constrainToParent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54A1893A8A8B4B7D14FB56535D50622B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4040EC9ACE60C845C7E0E67D950DB18E /* Pods-HristoJuniorTask-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEF51363809B3A97C7412D171E1C0FFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Pulley;
+			target = F7C232B721C9969BE9DC891D7F94DBFA /* Pulley */;
+			targetProxy = 899F0B3CED65EA60A9FDCE43986B015E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0151F046DBE7E8D4D5EC719D2BA90961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B78D2B3D6A248E51160FECA46F4C7A90 /* Pulley.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pulley/Pulley-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pulley/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pulley/Pulley.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Pulley;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2B3AE2C859B769216F09B0F86947ED90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B78D2B3D6A248E51160FECA46F4C7A90 /* Pulley.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pulley/Pulley-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pulley/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pulley/Pulley.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Pulley;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9BFC9E4A7AAD7A607ACE06D95A401A5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C03B8870130C98D1B02B59D003687524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB70D5EFC33044E81FA188BAB808CE7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BDD46A9AA94871A6034D29C8AC90A9E /* Pods-HristoJuniorTask.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-HristoJuniorTask/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HristoJuniorTask;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FCAC76FF0121D2EB00B549D4CD3EBAA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC6328F38A627DC61B62078CA2A1F470 /* Pods-HristoJuniorTask.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-HristoJuniorTask/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HristoJuniorTask;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05204941C9C5591A0950D80E1E4E63CD /* Build configuration list for PBXNativeTarget "Pulley" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B3AE2C859B769216F09B0F86947ED90 /* Debug */,
+				0151F046DBE7E8D4D5EC719D2BA90961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BFC9E4A7AAD7A607ACE06D95A401A5A /* Debug */,
+				C03B8870130C98D1B02B59D003687524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6632F94435DFCDB31150D301B10857C /* Build configuration list for PBXNativeTarget "Pods-HristoJuniorTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCAC76FF0121D2EB00B549D4CD3EBAA9 /* Debug */,
+				FB70D5EFC33044E81FA188BAB808CE7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
