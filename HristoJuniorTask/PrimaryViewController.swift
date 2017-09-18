@@ -22,9 +22,7 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
             guard let markers = markers, markers.count > 0 else {
                 return
             }
-//            DispatchQueue.main.async {
-                markers.show(on: self.mapView)
-//            }
+            markers.show(on: self.mapView)
         }
     }
     private lazy var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -38,28 +36,26 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
     
     // MARK: - Methods
     private func showPreviousMarkers() {
-//        DispatchQueue.global(qos: .userInteractive).async {
-            PersistentLocation.load(in: self.context, all: { (locations) in
-                locations.create(inBlock: { (markers) in
-                    self.markers = markers
-                })
+        PersistentLocation.load(in: self.context, all: { (locations) in
+            locations.create(inBlock: { (markers) in
+                self.markers = markers
             })
-//        }
+        })
     }
     
     private func showCurrentLocation() {
         CustomLocationManager.shared.getCurrent { (location) in
             self.mapView.isMyLocationEnabled = true
             self.mapView.settings.myLocationButton = true
-            self.mapView.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 17)
+            self.mapView.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
         }
     }
     
     private func addMarker(at coordinate: CLLocationCoordinate2D) {
-        addMarker(at: coordinate, successBlock: nil)
+        addMarker(at: coordinate, andZoom: false)
     }
     
-    private func addMarker(at coordinate: CLLocationCoordinate2D, successBlock: (()->())?) {
+    private func addMarker(at coordinate: CLLocationCoordinate2D, andZoom zoom: Bool?) {
         let marker = GMSMarker(position: coordinate)
         marker.icon = GMSMarker.markerImage(with: .gray)
         marker.isDraggable = true
@@ -76,14 +72,17 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
                                                      country: geocoding.country,
                                                      coordinate: coordinate,
                                                      insertInto: self.context)
-                successBlock?()
+                if zoom == true {
+                    self.mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 17)
+                }
                 return
             }
             location.map(geocoding)
-            successBlock?()
+            if zoom == true {
+                self.mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 17)
+            }
         }
     }
-    
     
     private func updatePosition(of marker: GMSMarker) {
         guard let location = marker.userData as? PersistentLocation, let coordinate = location.coordinate else {
@@ -116,9 +115,7 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
             marker.map = nil
             location.delete(in: self.context)
             let coordinate = CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
-            self.addMarker(at: coordinate, successBlock: { 
-                self.mapView.camera = GMSCameraPosition.camera(withLatitude: position.latitude, longitude: position.longitude, zoom: 17)
-            })
+            self.addMarker(at: coordinate, andZoom: true)
         })
         let navigationController = UINavigationController(rootViewController: controller)
         present(navigationController, animated: true, completion: nil)

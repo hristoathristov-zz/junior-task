@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381DD3981F6FF81A00459DF3 /* GMSMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DD3971F6FF81A00459DF3 /* GMSMapView.swift */; };
 		384A63FF1F6D68840084E866 /* CustomLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A63FE1F6D68840084E866 /* CustomLocationManager.swift */; };
 		384A64011F6D6B9A0084E866 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A64001F6D6B9A0084E866 /* UIAlertController.swift */; };
 		384A64031F6D757D0084E866 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A64021F6D757D0084E866 /* CLLocationCoordinate2D.swift */; };
@@ -25,6 +26,7 @@
 		385F51FF1F6D5E58008B50CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385F51FE1F6D5E58008B50CD /* Assets.xcassets */; };
 		385F52021F6D5E58008B50CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385F52001F6D5E58008B50CD /* LaunchScreen.storyboard */; };
 		385F520E1F6D6324008B50CD /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F520C1F6D6324008B50CD /* PrimaryViewController.swift */; };
+		386F07D61F6FFD2E006EF001 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386F07D51F6FFD2E006EF001 /* UIColor.swift */; };
 		3896E4D61F6EB9C200FBC0E4 /* PersistentImage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896E4D41F6EB9C200FBC0E4 /* PersistentImage+CoreDataClass.swift */; };
 		3896E4D71F6EB9C200FBC0E4 /* PersistentImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896E4D51F6EB9C200FBC0E4 /* PersistentImage+CoreDataProperties.swift */; };
 		3896E4DA1F6EBA5200FBC0E4 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896E4D81F6EBA5200FBC0E4 /* ImageTableViewCell.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381DD3971F6FF81A00459DF3 /* GMSMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSMapView.swift; sourceTree = "<group>"; };
 		384A63FE1F6D68840084E866 /* CustomLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationManager.swift; sourceTree = "<group>"; };
 		384A64001F6D6B9A0084E866 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		384A64021F6D757D0084E866 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		385F52011F6D5E58008B50CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		385F52031F6D5E58008B50CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385F520C1F6D6324008B50CD /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
+		386F07D51F6FFD2E006EF001 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3896E4D41F6EB9C200FBC0E4 /* PersistentImage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentImage+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3896E4D51F6EB9C200FBC0E4 /* PersistentImage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3896E4D81F6EBA5200FBC0E4 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,8 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				384A64021F6D757D0084E866 /* CLLocationCoordinate2D.swift */,
+				381DD3971F6FF81A00459DF3 /* GMSMapView.swift */,
 				384E4E451F6EAA690002B734 /* GMSMarker.swift */,
 				384A64001F6D6B9A0084E866 /* UIAlertController.swift */,
+				386F07D51F6FFD2E006EF001 /* UIColor.swift */,
 			);
 			name = "Standard Library Extensions";
 			sourceTree = "<group>";
@@ -349,8 +355,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				384E4E4A1F6EACD00002B734 /* LocationTableViewController.swift in Sources */,
+				386F07D61F6FFD2E006EF001 /* UIColor.swift in Sources */,
 				384A64091F6D76D10084E866 /* BaseRequest.swift in Sources */,
 				384A640B1F6D76F00084E866 /* GeocodingRequest.swift in Sources */,
+				381DD3981F6FF81A00459DF3 /* GMSMapView.swift in Sources */,
 				3896E4DA1F6EBA5200FBC0E4 /* ImageTableViewCell.swift in Sources */,
 				384A64011F6D6B9A0084E866 /* UIAlertController.swift in Sources */,
 				3896E4D71F6EB9C200FBC0E4 /* PersistentImage+CoreDataProperties.swift in Sources */,

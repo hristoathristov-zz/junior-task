@@ -145,6 +145,7 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         case .latitude, .longitude:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellFromSource.identifier, for: indexPath) as! TextFieldTableViewCell
             cell.leftTextLabel.text = cellFromSource.title
+            cell.leftTextLabel.textColor = .gray
             cell.textField.text = cellFromSource.text(from: location)
             cell.textField.delegate = self
             cell.textField.tag = cellFromSource.rawValue
@@ -158,7 +159,9 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellFromSource.identifier)
             cell.selectionStyle = .none
             cell.textLabel?.text = cellFromSource.title
+            cell.textLabel?.textColor = .gray
             cell.detailTextLabel?.text = cellFromSource.text(from: location)
+            cell.detailTextLabel?.textColor = .gray
             return cell
         }
     }
@@ -193,8 +196,8 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         picker.dismiss(animated: true) {
             let image = info[UIImagePickerControllerEditedImage] as? UIImage ?? info[UIImagePickerControllerOriginalImage] as! UIImage
             if self.images == nil { self.images = [] }
-            self.images?.append(image)
-            self.tableSource.count == 1 ? self.tableSource.insert([.image], at: 1) : self.tableSource[1].insert(.image, at: 0)
+            self.images?.insert(image, at: 0)
+            self.tableSource.count == 1 ? self.tableSource.insert([.image], at: 1) : self.tableSource[1].append(.image)
             self.tableView.reloadData()
             self.location.add(image, in: self.context)
         }

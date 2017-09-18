@@ -12,6 +12,20 @@ class ImageTableViewCell: UITableViewCell {
 
     @IBOutlet private var aspectFitImageView: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor(rgb: 0x007ffa)
+        selectedBackgroundView = selectedView
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected {
+            
+        }
+    }
+    
     internal var aspectConstraint : NSLayoutConstraint? {
         didSet {
             if oldValue != nil {
