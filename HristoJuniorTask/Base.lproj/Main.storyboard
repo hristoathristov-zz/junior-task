@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Custom Pulley View Controller-->
+        <!--Primary View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CustomPulleyViewController" customModule="HristoJuniorTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PrimaryViewController" customModule="HristoJuniorTask" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,8 +20,23 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hb-qh-1QY" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6hb-qh-1QY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="26J-Ku-VXi"/>
+                            <constraint firstItem="6hb-qh-1QY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gkv-oE-e5M"/>
+                            <constraint firstItem="6hb-qh-1QY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aEc-4e-Yhf"/>
+                            <constraint firstItem="6hb-qh-1QY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="c5Y-LN-Scw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="6hb-qh-1QY" id="sQ1-Ay-Y0L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

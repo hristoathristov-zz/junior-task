@@ -6,7 +6,8 @@ target 'HristoJuniorTask' do
   use_frameworks!
 
   # Pods for HristoJuniorTask
+  pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
   pod 'GoogleMaps'
-  pod 'Pulley'
 
 end
