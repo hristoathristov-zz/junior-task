@@ -20,12 +20,12 @@
 		384E4E441F6E85A20002B734 /* PersistentCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E4E401F6E85A20002B734 /* PersistentCoordinate+CoreDataProperties.swift */; };
 		384E4E461F6EAA690002B734 /* GMSMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E4E451F6EAA690002B734 /* GMSMarker.swift */; };
 		384E4E4A1F6EACD00002B734 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E4E491F6EACD00002B734 /* LocationTableViewController.swift */; };
+		385E20B71F706698005CAB4F /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E20B51F706698005CAB4F /* PrimaryViewController.swift */; };
 		385F51F51F6D5E58008B50CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F51F41F6D5E58008B50CD /* AppDelegate.swift */; };
 		385F51FA1F6D5E58008B50CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385F51F81F6D5E58008B50CD /* Main.storyboard */; };
 		385F51FD1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 385F51FB1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodeld */; };
 		385F51FF1F6D5E58008B50CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385F51FE1F6D5E58008B50CD /* Assets.xcassets */; };
 		385F52021F6D5E58008B50CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385F52001F6D5E58008B50CD /* LaunchScreen.storyboard */; };
-		385F520E1F6D6324008B50CD /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F520C1F6D6324008B50CD /* PrimaryViewController.swift */; };
 		386F07D61F6FFD2E006EF001 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386F07D51F6FFD2E006EF001 /* UIColor.swift */; };
 		3896E4D61F6EB9C200FBC0E4 /* PersistentImage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896E4D41F6EB9C200FBC0E4 /* PersistentImage+CoreDataClass.swift */; };
 		3896E4D71F6EB9C200FBC0E4 /* PersistentImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896E4D51F6EB9C200FBC0E4 /* PersistentImage+CoreDataProperties.swift */; };
@@ -33,6 +33,7 @@
 		3896E4DB1F6EBA5200FBC0E4 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3896E4D91F6EBA5200FBC0E4 /* ImageTableViewCell.xib */; };
 		3896E4DE1F6EE08200FBC0E4 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896E4DC1F6EE08200FBC0E4 /* TextFieldTableViewCell.swift */; };
 		3896E4DF1F6EE08200FBC0E4 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3896E4DD1F6EE08200FBC0E4 /* TextFieldTableViewCell.xib */; };
+		38CFD4971F703F3F00AEF348 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CFD4961F703F3F00AEF348 /* Double.swift */; };
 		8922FA1F578AA8A4F0D095ED /* Pods_HristoJuniorTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D779EAEB13233CD2A00A2781 /* Pods_HristoJuniorTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		384E4E401F6E85A20002B734 /* PersistentCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		384E4E451F6EAA690002B734 /* GMSMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSMarker.swift; sourceTree = "<group>"; };
 		384E4E491F6EACD00002B734 /* LocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
+		385E20B51F706698005CAB4F /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
 		385F51F11F6D5E58008B50CD /* HristoJuniorTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HristoJuniorTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385F51F41F6D5E58008B50CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		385F51F91F6D5E58008B50CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,7 +59,6 @@
 		385F51FE1F6D5E58008B50CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		385F52011F6D5E58008B50CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		385F52031F6D5E58008B50CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		385F520C1F6D6324008B50CD /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
 		386F07D51F6FFD2E006EF001 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3896E4D41F6EB9C200FBC0E4 /* PersistentImage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentImage+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3896E4D51F6EB9C200FBC0E4 /* PersistentImage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		3896E4D91F6EBA5200FBC0E4 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
 		3896E4DC1F6EE08200FBC0E4 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		3896E4DD1F6EE08200FBC0E4 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		38CFD4961F703F3F00AEF348 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		8EE8C3A05F04A6405179CFF9 /* Pods-HristoJuniorTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HristoJuniorTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask.debug.xcconfig"; sourceTree = "<group>"; };
 		D779EAEB13233CD2A00A2781 /* Pods_HristoJuniorTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HristoJuniorTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD02D4FA6F86A4AAEE42578 /* Pods-HristoJuniorTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HristoJuniorTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-HristoJuniorTask/Pods-HristoJuniorTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				384A64021F6D757D0084E866 /* CLLocationCoordinate2D.swift */,
+				38CFD4961F703F3F00AEF348 /* Double.swift */,
 				381DD3971F6FF81A00459DF3 /* GMSMapView.swift */,
 				384E4E451F6EAA690002B734 /* GMSMarker.swift */,
 				384A64001F6D6B9A0084E866 /* UIAlertController.swift */,
@@ -178,9 +181,9 @@
 		385F520A1F6D5F5B008B50CD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				385F51FE1F6D5E58008B50CD /* Assets.xcassets */,
-				385F51F81F6D5E58008B50CD /* Main.storyboard */,
 				385F52001F6D5E58008B50CD /* LaunchScreen.storyboard */,
+				385F51F81F6D5E58008B50CD /* Main.storyboard */,
+				385F51FE1F6D5E58008B50CD /* Assets.xcassets */,
 				3896E4D81F6EBA5200FBC0E4 /* ImageTableViewCell.swift */,
 				3896E4D91F6EBA5200FBC0E4 /* ImageTableViewCell.xib */,
 				3896E4DC1F6EE08200FBC0E4 /* TextFieldTableViewCell.swift */,
@@ -192,7 +195,7 @@
 		385F520B1F6D5F69008B50CD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				385F520C1F6D6324008B50CD /* PrimaryViewController.swift */,
+				385E20B51F706698005CAB4F /* PrimaryViewController.swift */,
 				384E4E491F6EACD00002B734 /* LocationTableViewController.swift */,
 			);
 			name = Controllers;
@@ -317,12 +320,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -360,12 +365,12 @@
 				384A640B1F6D76F00084E866 /* GeocodingRequest.swift in Sources */,
 				381DD3981F6FF81A00459DF3 /* GMSMapView.swift in Sources */,
 				3896E4DA1F6EBA5200FBC0E4 /* ImageTableViewCell.swift in Sources */,
+				385E20B71F706698005CAB4F /* PrimaryViewController.swift in Sources */,
 				384A64011F6D6B9A0084E866 /* UIAlertController.swift in Sources */,
 				3896E4D71F6EB9C200FBC0E4 /* PersistentImage+CoreDataProperties.swift in Sources */,
 				384A64031F6D757D0084E866 /* CLLocationCoordinate2D.swift in Sources */,
 				384E4E431F6E85A20002B734 /* PersistentCoordinate+CoreDataClass.swift in Sources */,
 				3896E4D61F6EB9C200FBC0E4 /* PersistentImage+CoreDataClass.swift in Sources */,
-				385F520E1F6D6324008B50CD /* PrimaryViewController.swift in Sources */,
 				384E4E421F6E85A20002B734 /* PersistentLocation+CoreDataProperties.swift in Sources */,
 				384A63FF1F6D68840084E866 /* CustomLocationManager.swift in Sources */,
 				385F51F51F6D5E58008B50CD /* AppDelegate.swift in Sources */,
@@ -374,6 +379,7 @@
 				385F51FD1F6D5E58008B50CD /* HristoJuniorTask.xcdatamodeld in Sources */,
 				384E4E441F6E85A20002B734 /* PersistentCoordinate+CoreDataProperties.swift in Sources */,
 				384E4E461F6EAA690002B734 /* GMSMarker.swift in Sources */,
+				38CFD4971F703F3F00AEF348 /* Double.swift in Sources */,
 				3896E4DE1F6EE08200FBC0E4 /* TextFieldTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -486,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

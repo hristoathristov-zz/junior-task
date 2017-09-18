@@ -7,6 +7,7 @@
     </entity>
     <entity name="PersistentImage" representedClassName="PersistentImage" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersistentLocation" inverseName="images" inverseEntity="PersistentLocation" syncable="YES"/>
     </entity>
     <entity name="PersistentLocation" representedClassName="PersistentLocation" syncable="YES">
@@ -15,11 +16,11 @@
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="coordinate" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PersistentCoordinate" inverseName="location" inverseEntity="PersistentCoordinate" syncable="YES"/>
-        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PersistentImage" inverseName="location" inverseEntity="PersistentImage" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PersistentImage" inverseName="location" inverseEntity="PersistentImage" syncable="YES"/>
     </entity>
     <elements>
         <element name="PersistentCoordinate" positionX="-54" positionY="0" width="128" height="88"/>
-        <element name="PersistentImage" positionX="-47" positionY="176" width="128" height="73"/>
-        <element name="PersistentLocation" positionX="-317" positionY="48" width="128" height="133"/>
+        <element name="PersistentImage" positionX="-47" positionY="176" width="128" height="90"/>
+        <element name="PersistentLocation" positionX="-317" positionY="48" width="128" height="135"/>
     </elements>
 </model>

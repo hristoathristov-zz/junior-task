@@ -8,23 +8,18 @@
 
 import UIKit
 
+@objc protocol ImageTableViewCellDelegate {
+    @objc optional func tapped(_ button: UIButton, in cell: ImageTableViewCell)
+}
+
 class ImageTableViewCell: UITableViewCell {
 
     @IBOutlet private var aspectFitImageView: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        let selectedView = UIView()
-        selectedView.backgroundColor = UIColor(rgb: 0x007ffa)
-        selectedBackgroundView = selectedView
+    @IBOutlet weak var button: UIButton!
+    @IBAction func tapped(_ sender: UIButton) {
+        delegate?.tapped?(sender, in: self)
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        if selected {
-            
-        }
-    }
+    var delegate: ImageTableViewCellDelegate?
     
     internal var aspectConstraint : NSLayoutConstraint? {
         didSet {

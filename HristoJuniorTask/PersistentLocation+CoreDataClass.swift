@@ -84,25 +84,30 @@ public class PersistentLocation: NSManagedObject {
         }
     }
 
-    func add(_ image: UIImage, in context: NSManagedObjectContext) {
-//        DispatchQueue.global(qos: .userInitiated).async {
-            guard let data = UIImageJPEGRepresentation(image, 1), let image = PersistentImage(data: data as NSData, insertInto: context) else {
-                return
-            }
-//            DispatchQueue.main.async {
-                self.addToImages(image)
-//            }
-//        }
+    func add(_ image: UIImage, in context: NSManagedObjectContext) -> PersistentImage? {
+        guard let data = UIImageJPEGRepresentation(image, 1), let image = PersistentImage(data: data as NSData, insertInto: context) else {
+            return nil
+        }
+        image.dateCreated = NSDate()
+        self.addToImages(image)
+        return image
     }
     
-    func getImagesDataAsUIImage() -> [UIImage]? {
+    func getImagesWithObjectIDs() -> [(objectID: NSManagedObjectID, image: UIImage)]? {
         guard images != nil && images!.count > 0 else {
             return nil
         }
-        var result = [UIImage]()
+        var imagesArray = [PersistentImage]()
         for element in images! {
-            if let data = (element as? PersistentImage)?.data, let image = UIImage(data: data as Data) {
-                result.append(image)
+            if let persistentImage = element as? PersistentImage {
+                imagesArray.append(persistentImage)
+            }
+        }
+        imagesArray.sort { $0.dateCreated?.compare($1.dateCreated! as Date) == .orderedDescending }
+        var result = [(NSManagedObjectID, UIImage)]()
+        for persistentImage in imagesArray {
+            if let data = persistentImage.data, let image = UIImage(data: data as Data) {
+                result.append((objectID: persistentImage.objectID, image: image))
             }
         }
         return result
@@ -120,6 +125,7 @@ extension Array where Element: PersistentLocation {
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude))
             marker.userData = location
             marker.title = location.address
+            marker.snippet = "TAP for details OR DRAG to relocate"
             marker.icon = GMSMarker.markerImage(with: .blue)
             marker.isDraggable = true
             if markers == nil {

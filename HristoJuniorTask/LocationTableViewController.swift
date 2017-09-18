@@ -10,9 +10,9 @@ import CoreData
 import CoreLocation
 import UIKit
 
-typealias LocationBlock = ()->()
+typealias LocationBlock = (PersistentLocation?)->()
 
-class LocationTableViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class LocationTableViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageTableViewCellDelegate {
     
     private enum Cells: Int {
         case id
@@ -22,6 +22,7 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         case latitude
         case longitude
         case image
+        case delete
         
         var identifier: String {
             switch self {
@@ -48,42 +49,46 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
                 return "Latitude"
             case .longitude:
                 return "Longitude"
-            default:
-                return nil
+            case .image:
+                return "Delete"
+            case .delete:
+                return "Delete"
             }
         }
         
-        func text(from location: PersistentLocation) -> String? {
+        func text(from location: PersistentLocation?) -> String? {
             switch self {
             case .id:
-                return location.id
+                return location?.id
             case .address:
-                return location.address
+                return location?.address
             case .city:
-                return location.city
+                return location?.city
             case .country:
-                return location.country
+                return location?.country
             case .latitude:
-                return location.coordinate?.latitude.description
+                return location?.coordinate?.latitude.rounded(toPlaces: 4).description
             case .longitude:
-                return location.coordinate?.longitude.description
+                return location?.coordinate?.longitude.rounded(toPlaces: 4).description
             default:
                 return nil
             }
         }
     }
     
-    private var location: PersistentLocation!
+    // MARK: - Properties
+    private var location: PersistentLocation?
     private var locationWasChanged = false
     private var updatedLocationBlock: LocationBlock!
-    private var images: [UIImage]?
-    private var tableSource: [[Cells]] = [[.id, .address, .city, .country, .latitude, .longitude]]
+    private var imagesWithIDs: [(objectID: NSManagedObjectID, image: UIImage)]?
+    private var tableSource: [[Cells]] = [[.id, .address, .city, .country, .latitude, .longitude], [.delete]]
     private lazy var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    init(location: PersistentLocation, updatedLocationBlock: @escaping LocationBlock) {
+    // MARK: - Life Cycle
+    init(location: PersistentLocation, ifUpdated locationBlock: @escaping LocationBlock) {
         super.init(style: .grouped)
         self.location = location
-        self.updatedLocationBlock = updatedLocationBlock
+        updatedLocationBlock = locationBlock
         showImages(from: location)
         initialSetup()
     }
@@ -92,12 +97,27 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Methods
+    private func firstIndex(of cell: Cells) -> IndexPath? {
+        for section in 0..<tableSource.count {
+            for row in 0..<tableSource[section].count {
+                if tableSource[section][row] == cell {
+                    return IndexPath(row: row, section: section)
+                }
+            }
+        }
+        return nil
+    }
+    
     private func showImages(from location: PersistentLocation) {
         guard location.images != nil && location.images!.count > 0 else {
             return
         }
-        images = location.getImagesDataAsUIImage()
-        let imagesSection = Array(repeating: Cells.image, count: images!.count)
+        guard let fetchedImagesWithObjectIDs = location.getImagesWithObjectIDs() else {
+            return
+        }
+        imagesWithIDs = fetchedImagesWithObjectIDs
+        let imagesSection = Array(repeating: Cells.image, count: imagesWithIDs!.count)
         tableSource.insert(imagesSection, at: 1)
     }
     
@@ -115,7 +135,11 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
     
     @objc private func dismissController() {
         view.endEditing(true)
-        navigationController?.dismiss(animated: true, completion: locationWasChanged ? self.updatedLocationBlock : nil)
+        navigationController?.dismiss(animated: true, completion: { 
+            if self.locationWasChanged {
+                self.updatedLocationBlock(self.location)
+            }
+        })
     }
     
     @objc private func openCamera() {
@@ -130,7 +154,6 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return tableSource.count
     }
@@ -149,11 +172,19 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
             cell.textField.text = cellFromSource.text(from: location)
             cell.textField.delegate = self
             cell.textField.tag = cellFromSource.rawValue
+            cell.textField.keyboardType = .numbersAndPunctuation
             return cell
         case .image:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellFromSource.identifier, for: indexPath) as! ImageTableViewCell
-            cell.set(images![indexPath.row])
-            print(images?[indexPath.row].size.height ?? "")
+            cell.set(imagesWithIDs![indexPath.row].image)
+            cell.button.setTitle(cellFromSource.title, for: .normal)
+            cell.delegate = self
+            return cell
+        case .delete:
+            let cell =  tableView.dequeueReusableCell(withIdentifier: cellFromSource.identifier, for: indexPath)
+            cell.textLabel?.text = cellFromSource.title
+            cell.textLabel?.textColor = .red
+            cell.detailTextLabel?.text = nil
             return cell
         default:
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellFromSource.identifier)
@@ -166,14 +197,23 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableSource[indexPath.section][indexPath.row] == .delete && location != nil {
+            context.delete(location!)
+            location = nil
+            locationWasChanged = true
+            dismissController()
+        }
+    }
+    
     // MARK: - UITextFieldDelegate
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text, let newValue = Double(text) else {
             switch textField.tag {
             case Cells.latitude.rawValue:
-                textField.text = location.coordinate?.latitude.description
+                textField.text = location?.coordinate?.latitude.description
             case Cells.longitude.rawValue:
-                textField.text = location.coordinate?.longitude.description
+                textField.text = location?.coordinate?.longitude.description
             default:
                 break
             }
@@ -181,13 +221,29 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         }
         switch textField.tag {
         case Cells.latitude.rawValue:
-            location.coordinate?.latitude = newValue
+            location?.coordinate?.latitude = newValue
             locationWasChanged = true
         case Cells.longitude.rawValue:
-            location.coordinate?.longitude = newValue
+            location?.coordinate?.longitude = newValue
             locationWasChanged = true
         default:
             break
+        }
+    }
+    
+    // MARK: - ImageTableViewCellDelegate
+    func tapped(_ button: UIButton, in cell: ImageTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell), imagesWithIDs != nil else {
+            return
+        }
+        let imageWithID = imagesWithIDs!.remove(at: indexPath.row)
+        context.delete(context.object(with: imageWithID.objectID))
+        if tableSource[1].count > 1 {
+            tableSource[1].remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } else {
+            tableSource.remove(at: 1)
+            tableView.deleteSections(IndexSet(integer: 1), with: .automatic)
         }
     }
     
@@ -195,13 +251,19 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true) {
             let image = info[UIImagePickerControllerEditedImage] as? UIImage ?? info[UIImagePickerControllerOriginalImage] as! UIImage
-            if self.images == nil { self.images = [] }
-            self.images?.insert(image, at: 0)
-            self.tableSource.count == 1 ? self.tableSource.insert([.image], at: 1) : self.tableSource[1].append(.image)
-            self.tableView.reloadData()
-            self.location.add(image, in: self.context)
+            if self.imagesWithIDs == nil { self.imagesWithIDs = [] }
+            guard let persistentImage = self.location?.add(image, in: self.context) else {
+                return
+            }
+            self.imagesWithIDs?.insert((objectID: persistentImage.objectID, image: image), at: 0)
+            if self.tableSource.count == 3 {
+                self.tableSource[1].append(.image)
+                self.tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .bottom)
+            } else {
+                self.tableSource.insert([.image], at: 1)
+                self.tableView.insertSections(IndexSet(integer: 1), with: .bottom)
+            }
         }
     }
-    
     
 }

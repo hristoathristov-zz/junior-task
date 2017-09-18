@@ -9,5 +9,6 @@ target 'HristoJuniorTask' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'GoogleMaps'
+  pod 'Pulley'
 
 end

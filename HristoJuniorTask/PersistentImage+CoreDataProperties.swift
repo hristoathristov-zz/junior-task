@@ -2,7 +2,7 @@
 //  PersistentImage+CoreDataProperties.swift
 //  HristoJuniorTask
 //
-//  Created by Hristo Hristov on 17/9/17.
+//  Created by Hristo Hristov on 18/9/17.
 //  Copyright © 2017 allterco. All rights reserved.
 //
 
@@ -17,6 +17,7 @@ extension PersistentImage {
     }
 
     @NSManaged public var data: NSData?
+    @NSManaged public var dateCreated: NSDate?
     @NSManaged public var location: PersistentLocation?
 
 }

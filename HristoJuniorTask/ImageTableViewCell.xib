@@ -12,26 +12,59 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="167" id="KGk-i7-Jjw" customClass="ImageTableViewCell" customModule="HristoJuniorTask" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="167" id="KGk-i7-Jjw" customClass="ImageTableViewCell" customModule="HristoJuniorTask" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="431" height="167"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="431" height="167"/>
+                <rect key="frame" x="0.0" y="0.0" width="431" height="166.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-7B-TRv">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-7B-TRv">
                         <rect key="frame" x="8" y="8" width="415" height="150.5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghW-tS-eD3" userLabel="Button Background">
+                        <rect key="frame" x="13" y="13" width="55" height="33"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNR-Ex-FqG">
+                                <rect key="frame" x="2" y="0.0" width="51" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Sg-7B-pvS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DNR-Ex-FqG" secondAttribute="bottom" id="D8C-Ex-dY6"/>
+                            <constraint firstItem="DNR-Ex-FqG" firstAttribute="leading" secondItem="ghW-tS-eD3" secondAttribute="leading" constant="2" id="S18-8r-Hmd"/>
+                            <constraint firstItem="DNR-Ex-FqG" firstAttribute="top" secondItem="ghW-tS-eD3" secondAttribute="top" id="THu-03-pb6"/>
+                            <constraint firstAttribute="trailing" secondItem="DNR-Ex-FqG" secondAttribute="trailing" constant="2" id="iB4-U2-Iiu"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="pTU-7B-TRv" secondAttribute="bottom" id="0rW-jr-GxS"/>
                     <constraint firstItem="pTU-7B-TRv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1pP-R1-D7j"/>
+                    <constraint firstItem="ghW-tS-eD3" firstAttribute="top" secondItem="pTU-7B-TRv" secondAttribute="top" constant="5" id="CgM-t6-T6S"/>
                     <constraint firstItem="pTU-7B-TRv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="E9b-Zz-DcQ"/>
+                    <constraint firstItem="ghW-tS-eD3" firstAttribute="leading" secondItem="pTU-7B-TRv" secondAttribute="leading" constant="5" id="aPD-Gj-mMd"/>
                     <constraint firstAttribute="trailingMargin" secondItem="pTU-7B-TRv" secondAttribute="trailing" id="fkH-Av-3Kg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="aspectFitImageView" destination="pTU-7B-TRv" id="ZAr-bN-alf"/>
+                <outlet property="aspectFitImageView" destination="pTU-7B-TRv" id="kvJ-Ht-BwR"/>
+                <outlet property="button" destination="DNR-Ex-FqG" id="sev-Yx-vJq"/>
             </connections>
             <point key="canvasLocation" x="58" y="107"/>
         </tableViewCell>
