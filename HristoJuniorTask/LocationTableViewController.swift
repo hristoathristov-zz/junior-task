@@ -109,6 +109,10 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         return nil
     }
     
+    /**
+     * Since UIImage type cannot be saved to CoreData, they can be saved as NSData and converted to UIImage when needed.
+     * - parameter location: the PersistentLocation whose images set will be fetched as an array of tuples of object IDs and UIImages
+     */
     private func showImages(from location: PersistentLocation) {
         guard location.images != nil && location.images!.count > 0 else {
             return
@@ -133,6 +137,9 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         tableView.estimatedRowHeight = 70
     }
     
+    /**
+     * If the location was changed or deleted, this will be shown when going back to the map.
+     */
     @objc private func dismissController() {
         view.endEditing(true)
         navigationController?.dismiss(animated: true, completion: { 

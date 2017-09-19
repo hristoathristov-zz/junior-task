@@ -35,6 +35,9 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
     }
     
     // MARK: - Methods
+    /**
+     * Shows markers that have been added previously and saved to CoreData.
+     */
     private func showPreviousMarkers() {
         PersistentLocation.load(in: self.context, all: { (locations) in
             locations.create(inBlock: { (markers) in
@@ -43,6 +46,9 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
         })
     }
     
+    /**
+     * Tries to show the current location on the map. If the user declines the authorization, a message appears.
+     */
     private func showCurrentLocation() {
         CustomLocationManager.shared.getCurrent { (location) in
             self.mapView.isMyLocationEnabled = true
@@ -51,6 +57,12 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
         }
     }
     
+    /**
+     * Adds a marker on the map.
+     * - parameter coordinate: the coordinate at which the marker is added
+     * - parameter persistentLocation: if passed, it is set as the markers' 'userData' property, so that previously added images are not lost
+     * - parameter andZoom: if true, the map will zoom into the new marker
+     */
     private func addMarker(at coordinate: CLLocationCoordinate2D, with persistentLocation: PersistentLocation?, andZoom zoom: Bool?) {
         let marker = GMSMarker(position: coordinate)
         marker.icon = GMSMarker.markerImage(with: .gray)
@@ -88,6 +100,10 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
         addMarker(at: coordinate, andZoom: false)
     }
     
+    /**
+     * Fetches the geometry a marker and updated its properties.
+     * - parameter marker: the marker whose geometry will be fetched
+     */
     private func updatePosition(of marker: GMSMarker) {
         guard let location = marker.userData as? PersistentLocation else {
             return
@@ -117,6 +133,10 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
         })
     }
     
+    /**
+     * Shows the details screen of the 'userData' property (of type PersistentLocation)
+     * - parameter marker: the marker whose 'userData' (as PersistentLocation) property will be used
+     */
     private func showDetailsController(for marker: GMSMarker) {
         guard let markersLocation = marker.userData as? PersistentLocation else {
             return
