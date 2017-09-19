@@ -15,33 +15,24 @@ public class PersistentLocation: NSManagedObject {
     
     fileprivate override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
+        try? context?.save()
     }
     
-    init?(geocoding: Geocoding, insertInto context: NSManagedObjectContext) {
+    init?(geocoding: Geocoding, coordinate: CLLocationCoordinate2D, insertInto context: NSManagedObjectContext) {
         guard let entity = NSEntityDescription.entity(forEntityName: String(describing: PersistentLocation.self), in: context) else {
             return nil
         }
         super.init(entity: entity, insertInto: context)
-        map(geocoding)
-    }
-    
-    init?(id: String?, address: String?, city: String?, country: String?, coordinate: CLLocationCoordinate2D, insertInto context: NSManagedObjectContext) {
-        guard let entity = NSEntityDescription.entity(forEntityName: String(describing: PersistentLocation.self), in: context) else {
-            return nil
-        }
-        super.init(entity: entity, insertInto: context)
-        self.id = id
-        self.address = address
-        self.city = city
-        self.country = country
         self.coordinate = PersistentCoordinate(coordinate: coordinate, insertInto: context)
+        map(geocoding, inside: context)
     }
     
-    func map(_ geocoding: Geocoding) {
+    func map(_ geocoding: Geocoding, inside context: NSManagedObjectContext) {
         id = geocoding.id
         address = geocoding.address
         city = geocoding.city
         country = geocoding.country
+        try? context.save()
     }
     
     static func load(in context: NSManagedObjectContext, all successBlock: @escaping ([PersistentLocation])->()) {
@@ -51,11 +42,6 @@ public class PersistentLocation: NSManagedObject {
     static func load(in context: NSManagedObjectContext, all successBlock: @escaping ([PersistentLocation])->(), failureBlock:((Error)->())?) {
         context.perform {
             do {
-//                if let locations = try context.fetch(fetchRequest()) as? [PersistentLocation], locations.count > 0 {
-//                    successBlock(locations)
-//                    return
-//                }
-//                failureBlock?(NSError(domain: "No locations have been saved", code: 0, userInfo: nil))
                 successBlock(try context.fetch(fetchRequest()))
             } catch let error {
                 failureBlock?(error)
@@ -90,6 +76,7 @@ public class PersistentLocation: NSManagedObject {
         }
         image.dateCreated = NSDate()
         self.addToImages(image)
+        try? context.save()
         return image
     }
     

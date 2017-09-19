@@ -28,14 +28,6 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
     private lazy var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     // MARK: - Life Cycle
-    init() {
-        super.init(nibName: String(describing: PrimaryViewController.self), bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         showPreviousMarkers()
@@ -59,11 +51,7 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
         }
     }
     
-    private func addMarker(at coordinate: CLLocationCoordinate2D) {
-        addMarker(at: coordinate, andZoom: false)
-    }
-    
-    private func addMarker(at coordinate: CLLocationCoordinate2D, andZoom zoom: Bool?) {
+    private func addMarker(at coordinate: CLLocationCoordinate2D, with persistentLocation: PersistentLocation?, andZoom zoom: Bool?) {
         let marker = GMSMarker(position: coordinate)
         marker.icon = GMSMarker.markerImage(with: .gray)
         marker.title = "Loading..."
@@ -75,27 +63,33 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
             marker.title = address
             marker.snippet = "TAP for details OR DRAG to relocate"
             marker.icon = GMSMarker.markerImage(with: .blue)
-            guard let location = marker.userData as? PersistentLocation else {
-                marker.userData = PersistentLocation(id: geocoding.id,
-                                                     address: address,
-                                                     city: geocoding.city,
-                                                     country: geocoding.country,
-                                                     coordinate: coordinate,
-                                                     insertInto: self.context)
+            guard let location = persistentLocation else {
+                marker.userData = PersistentLocation(geocoding: geocoding, coordinate: coordinate, insertInto: self.context)
                 if zoom == true {
                     self.mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 17)
                 }
                 return
             }
-            location.map(geocoding)
+            location.coordinate?.latitude = marker.position.latitude
+            location.coordinate?.longitude = marker.position.longitude
+            location.map(geocoding, inside: self.context)
+            marker.userData = location
             if zoom == true {
                 self.mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 17)
             }
         }
     }
     
+    private func addMarker(at coordinate: CLLocationCoordinate2D, andZoom zoom: Bool?) {
+        addMarker(at: coordinate, with: nil, andZoom: zoom)
+    }
+    
+    private func addMarker(at coordinate: CLLocationCoordinate2D) {
+        addMarker(at: coordinate, andZoom: false)
+    }
+    
     private func updatePosition(of marker: GMSMarker) {
-        guard let location = marker.userData as? PersistentLocation, let coordinate = location.coordinate else {
+        guard let location = marker.userData as? PersistentLocation else {
             return
         }
         marker.icon = GMSMarker.markerImage(with: .gray)
@@ -107,14 +101,19 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
             let address = geocoding.address
             marker.title = address
             marker.snippet = "TAP for details OR DRAG to relocate"
-            location.map(geocoding)
-            coordinate.latitude = marker.position.latitude
-            coordinate.longitude = marker.position.longitude
+            location.map(geocoding, inside: self.context)
+            location.coordinate?.latitude = marker.position.latitude
+            location.coordinate?.longitude = marker.position.longitude
             self.mapView.selectedMarker = marker
         }, failureBlock: { (error) in
             UIAlertController.showWithOkButton(andMessage: error.localizedDescription)
-            marker.position.latitude = coordinate.latitude
-            marker.position.longitude = coordinate.longitude
+            guard let coordinate = location.coordinate else {
+                marker.map = nil
+                return
+            }
+            let oldCoordinate = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            self.addMarker(at: oldCoordinate, with: marker.userData as? PersistentLocation, andZoom: true)
+            marker.map = nil
         })
     }
     
@@ -129,9 +128,8 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
                 return
             }
             marker.map = nil
-            location?.delete(in: self.context)
             let coordinate = CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
-            self.addMarker(at: coordinate, andZoom: true)
+            self.addMarker(at: coordinate, with: location, andZoom: true)
         })
         let navigationController = UINavigationController(rootViewController: controller)
         present(navigationController, animated: true, completion: nil)

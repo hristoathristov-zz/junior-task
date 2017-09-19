@@ -14,6 +14,7 @@ public class PersistentCoordinate: NSManagedObject {
     
     fileprivate override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
+        try? context?.save()
     }
 
     init?(coordinate: CLLocationCoordinate2D, insertInto context: NSManagedObjectContext) {
@@ -22,6 +23,7 @@ public class PersistentCoordinate: NSManagedObject {
         }
         super.init(entity: entity, insertInto: context)
         map(coordinate)
+        try? context.save()
     }
     
     func map(_ coordinate: CLLocationCoordinate2D) {

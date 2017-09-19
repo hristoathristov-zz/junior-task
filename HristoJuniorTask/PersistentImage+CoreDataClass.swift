@@ -14,6 +14,7 @@ public class PersistentImage: NSManagedObject {
     
     fileprivate override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
+        try? context?.save()
     }
     
     init?(data: NSData, insertInto context: NSManagedObjectContext) {
@@ -22,5 +23,6 @@ public class PersistentImage: NSManagedObject {
         }
         super.init(entity: entity, insertInto: context)
         self.data = data
+        try? context.save()
     }
 }
