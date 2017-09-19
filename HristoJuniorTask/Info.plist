@@ -23,9 +23,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>The app requires the use of Your location.</string>
+	<string>So That it Can Show it on the Map.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>The app requires the use of Photos.</string>
+	<string>To Let You Add Pictures of the Place.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>To Let You Take Pictures of the Place.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

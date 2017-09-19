@@ -123,11 +123,10 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
         }
         mapView.selectedMarker = nil
         let controller = LocationTableViewController(location: markersLocation, ifUpdated: { (location) in
+            marker.map = nil
             guard let position = location?.coordinate else {
-                marker.map = nil
                 return
             }
-            marker.map = nil
             let coordinate = CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
             self.addMarker(at: coordinate, with: location, andZoom: true)
         })

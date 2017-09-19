@@ -143,12 +143,12 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     
     @objc private func openCamera() {
-//        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-//            return
-//        }
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            return
+        }
         let picker = UIImagePickerController()
         picker.delegate = self
-//        picker.sourceType = .camera
+        picker.sourceType = .camera
         picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
     }
