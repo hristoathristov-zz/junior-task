@@ -1,35 +1,54 @@
 //
-//  PrimaryViewController.swift
+//  PrimViewController.swift
 //  HristoJuniorTask
 //
-//  Created by Hristo Hristov on 16/9/17.
+//  Created by Hristo Hristov on 19/9/17.
 //  Copyright © 2017 allterco. All rights reserved.
 //
 
 import CoreData
 import GoogleMaps
+import Pulley
 
-class PrimaryViewController: UIViewController, GMSMapViewDelegate {
+@objc protocol MapViewControllerDelegate {
+    @objc optional func mapViewController(set markers: [GMSMarker]?)
+    @objc optional func mapViewController(added marker: GMSMarker)
+    @objc optional func mapViewController(updated marker: GMSMarker)
+    @objc optional func mapViewController(deleted marker: GMSMarker, from total: Int)
+}
+
+extension Array where Element: MapViewControllerDelegate {
     
-    // MARK: - Properties
-    @IBOutlet private var mapView: GMSMapView! {
-        didSet {
-            mapView.delegate = self
-        }
+    func notifyAbout(setting markers: [GMSMarker]?) {
+        for delegate in self { delegate.mapViewController?(set: markers) }
     }
-    private var markers: [GMSMarker]? {
-        didSet {
-            guard let markers = markers, markers.count > 0 else {
-                return
-            }
-            markers.show(on: self.mapView)
-        }
+    
+    func notifyAbout(adding marker: GMSMarker) {
+        for delegate in self { delegate.mapViewController?(added: marker) }
     }
+    
+    func notifyAbout(updating marker: GMSMarker) {
+        for delegate in self { delegate.mapViewController?(updated: marker) }
+    }
+    
+    func notifyAbout(deleting marker: GMSMarker, from total: Int) {
+        for delegate in self { delegate.mapViewController?(deleted: marker, from: total) }
+    }
+}
+
+class MapViewController: UIViewController, GMSMapViewDelegate, PulleyDelegate, DrawerTableViewControllerDelegate {
+    
+    private var mapView: GMSMapView!
+    private var markers: [GMSMarker]?
+    lazy var delegates: [MapViewControllerDelegate] = []
     private lazy var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView = GMSMapView(frame: CGRect.zero)
+        mapView.delegate = self
+        view = mapView
         showPreviousMarkers()
         showCurrentLocation()
     }
@@ -40,9 +59,13 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
      */
     private func showPreviousMarkers() {
         PersistentLocation.load(in: self.context, all: { (locations) in
-            locations.create(inBlock: { (markers) in
-                self.markers = markers
-            })
+            if locations.count > 0 {
+                locations.create(inBlock: { (markers) in
+                    self.markers = markers
+                    self.markers?.show(on: self.mapView)
+                    self.delegates.notifyAbout(setting: markers)
+                })
+            }
         })
     }
     
@@ -65,6 +88,8 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
      */
     private func addMarker(at coordinate: CLLocationCoordinate2D, with persistentLocation: PersistentLocation?, andZoom zoom: Bool?) {
         let marker = GMSMarker(position: coordinate)
+        if markers == nil { markers = [] }
+        markers?.append(marker)
         marker.icon = GMSMarker.markerImage(with: .gray)
         marker.title = "Loading..."
         marker.isDraggable = true
@@ -73,6 +98,7 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
         coordinate.fetch { (geocoding) in
             let address = geocoding.address
             marker.title = address
+            self.delegates.notifyAbout(adding: marker)
             marker.snippet = "TAP for details OR DRAG to relocate"
             marker.icon = GMSMarker.markerImage(with: .blue)
             guard let location = persistentLocation else {
@@ -117,6 +143,7 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
             let address = geocoding.address
             marker.title = address
             marker.snippet = "TAP for details OR DRAG to relocate"
+            self.delegates.notifyAbout(updating: marker)
             location.map(geocoding, inside: self.context)
             location.coordinate?.latitude = marker.position.latitude
             location.coordinate?.longitude = marker.position.longitude
@@ -143,10 +170,15 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
         }
         mapView.selectedMarker = nil
         let controller = LocationTableViewController(location: markersLocation, ifUpdated: { (location) in
-            marker.map = nil
             guard let position = location?.coordinate else {
+                if let index = self.markers?.index(of: marker) {
+                    self.markers?.remove(at: index)
+                    self.delegates.notifyAbout(deleting: marker, from: self.markers!.count)
+                }
+                marker.map = nil
                 return
             }
+            marker.map = nil
             let coordinate = CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
             self.addMarker(at: coordinate, with: location, andZoom: true)
         })
@@ -170,5 +202,26 @@ class PrimaryViewController: UIViewController, GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
         updatePosition(of: marker)
+    }
+    
+    // MARK: - PulleyDelegate
+    private var drawerDistanceFromBottom: CGFloat?
+    func drawerChangedDistanceFromBottom(drawer: PulleyViewController, distance: CGFloat) {
+        if drawerDistanceFromBottom == nil {
+            drawerDistanceFromBottom = distance
+        }
+    }
+    
+    private var positionWasSet = false
+    func drawerPositionDidChange(drawer: PulleyViewController) {
+        if !positionWasSet && drawerDistanceFromBottom != nil && (drawer.drawerPosition == .collapsed || drawer.drawerPosition == .closed) {
+            view.frame.size.height = UIScreen.main.bounds.size.height - drawerDistanceFromBottom!
+        }
+    }
+    
+    // MARK: - DrawerTableViewControllerDelegate
+    func inDrawerTableViewController(wasSelected marker: GMSMarker) {
+        mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 17)
+        mapView.selectedMarker = marker
     }
 }

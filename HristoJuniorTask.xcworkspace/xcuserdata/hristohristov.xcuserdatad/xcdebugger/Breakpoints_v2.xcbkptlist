@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HristoJuniorTask/PrimaryViewController.swift"
-            timestampString = "527497715.25905"
+            timestampString = "527521228.516849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260">
+            startingLineNumber = "262"
+            endingLineNumber = "262">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HristoJuniorTask/PrimaryViewController.swift"
-            timestampString = "527497715.25905"
+            timestampString = "527521228.516849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256">
+            startingLineNumber = "258"
+            endingLineNumber = "258">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,11 +102,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HristoJuniorTask/PrimaryViewController.swift"
-            timestampString = "527497715.25905"
+            timestampString = "527521228.516849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166">
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "PrimaryViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -210,43 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HristoJuniorTask/PrimaryViewController.swift"
-            timestampString = "527497715.25905"
+            timestampString = "527521228.516849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HristoJuniorTask/CustomPulleyViewController.swift"
-            timestampString = "527460538.28165"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "init(contentViewController:drawerViewController:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HristoJuniorTask/CustomPulleyViewController.swift"
-            timestampString = "527460538.28165"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "init(coder:)"
-            landmarkType = "7">
+            startingLineNumber = "228"
+            endingLineNumber = "228">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -256,28 +226,204 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HristoJuniorTask/PrimaryViewController.swift"
-            timestampString = "527497715.25905"
+            timestampString = "527521228.516849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "mapView(_:didTap:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HristoJuniorTask/PrimaryViewController.swift"
-            timestampString = "527497315.681536"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "showDetailsController(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HristoJuniorTask/PrimaryViewController.swift"
+            timestampString = "527521228.516849"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "updatePosition(of:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HristoJuniorTask/PrimaryViewController.swift"
+            timestampString = "527521228.516849"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "showCurrentLocation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HristoJuniorTask.PrimaryViewController.(showCurrentLocation in _C84D6DAFF7A79CB7B640F88A30094896) () -&gt; ()"
+                  moduleName = "HristoJuniorTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hristohristov/Downloads/junior-task/HristoJuniorTask/PrimaryViewController.swift"
+                  timestampString = "527510874.76158"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HristoJuniorTask.PrimaryViewController.((showCurrentLocation in _C84D6DAFF7A79CB7B640F88A30094896) () -&gt; ()).(closure #1)"
+                  moduleName = "HristoJuniorTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hristohristov/Downloads/junior-task/HristoJuniorTask/PrimaryViewController.swift"
+                  timestampString = "527510874.763584"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HristoJuniorTask/PrimaryViewController.swift"
+            timestampString = "527521118.871615"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "mapView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HristoJuniorTask/MapViewController.swift"
+            timestampString = "527543775.220179"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "MapViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HristoJuniorTask.MapViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; HristoJuniorTask.MapViewController"
+                  moduleName = "HristoJuniorTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hristohristov/Downloads/junior-task/HristoJuniorTask/MapViewController.swift"
+                  timestampString = "527525084.615925"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HristoJuniorTask.MapViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;HristoJuniorTask.MapViewController&gt;"
+                  moduleName = "HristoJuniorTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hristohristov/Downloads/junior-task/HristoJuniorTask/MapViewController.swift"
+                  timestampString = "527525084.617276"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HristoJuniorTask/DrawerTableViewController.swift"
+            timestampString = "527544980.836896"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HristoJuniorTask/DrawerTableViewController.swift"
+            timestampString = "527544980.836896"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "mapViewController(set:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HristoJuniorTask/MapViewController.swift"
+            timestampString = "527543775.220179"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "addMarker(at:with:andZoom:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HristoJuniorTask/MapViewController.swift"
+            timestampString = "527546376.037195"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "drawerPositionDidChange(drawer:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

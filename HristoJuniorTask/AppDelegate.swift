@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey(GOOGLE_MAPS_API_KEY)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = CustomPulleyViewController()
+        window?.makeKeyAndVisible()
         return true
     }
 
