@@ -253,7 +253,6 @@
 				TargetAttributes = {
 					385F51F01F6D5E58008B50CD = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = D9F6VG3A83;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -506,7 +505,7 @@
 			baseConfigurationReference = 8EE8C3A05F04A6405179CFF9 /* Pods-HristoJuniorTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D9F6VG3A83;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HristoJuniorTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allterco.HristoJuniorTask;
@@ -520,7 +519,7 @@
 			baseConfigurationReference = FBD02D4FA6F86A4AAEE42578 /* Pods-HristoJuniorTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D9F6VG3A83;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HristoJuniorTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allterco.HristoJuniorTask;
