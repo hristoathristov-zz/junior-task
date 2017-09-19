@@ -51,7 +51,7 @@ class CustomLocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     fileprivate func showAlertForDeniedLocation() {
-        UIAlertController.showWithOkButton(andMessage: "The app cannot work without Your location. Please authorize it in the Settings menu.")
+        UIAlertController.showWithOkButton(andMessage: "If You would like to see Your location on the map, please authorize the app in the Settings menu.")
     }
     
     // MARK: - CLLocationManagerDelegate implementation

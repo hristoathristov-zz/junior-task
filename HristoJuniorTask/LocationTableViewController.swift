@@ -236,8 +236,8 @@ class LocationTableViewController: UITableViewController, UITextFieldDelegate, U
         guard let indexPath = tableView.indexPath(for: cell), imagesWithIDs != nil else {
             return
         }
-        let imageWithID = imagesWithIDs!.remove(at: indexPath.row)
-        context.delete(context.object(with: imageWithID.objectID))
+        let deletedImageWithID = imagesWithIDs!.remove(at: indexPath.row)
+        context.delete(context.object(with: deletedImageWithID.objectID))
         if tableSource[1].count > 1 {
             tableSource[1].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
